@@ -1,4 +1,4 @@
-package com.novelty.noveltybackend.user;
+package com.novelty.noveltybackend.noveltyUser;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,15 +9,15 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "api/user")
-public class UserController {
-    private final UserService userService;
+public class NoveltyUserController {
+    private final NoveltyUserService noveltyUserService;
 
     @Autowired
-    public UserController(UserService userService){
-        this.userService = userService;
+    public NoveltyUserController(NoveltyUserService noveltyUserService){
+        this.noveltyUserService = noveltyUserService;
     }
     @GetMapping
-    public List<User> getUsers(){
-        return userService.getUsers();
+    public List<NoveltyUser> getUsers(){
+        return noveltyUserService.getUsers();
     }
 }

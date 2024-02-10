@@ -1,17 +1,31 @@
-package com.novelty.noveltybackend.user;
+package com.novelty.noveltybackend.noveltyUser;
 
-public class User {
+import jakarta.persistence.*;
+
+@Entity
+@Table
+public class NoveltyUser {
+    @Id
+    @SequenceGenerator(
+            name = "user_sequence",
+            sequenceName = "user_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "user_sequence"
+    )
     private Long id;
     private String name;
 
-    public User() {
+    public NoveltyUser() {
     }
 
-    public User(String name) {
+    public NoveltyUser(String name) {
         this.name = name;
     }
 
-    public User(Long id, String name) {
+    public NoveltyUser(Long id, String name) {
         this.id = id;
         this.name = name;
     }
