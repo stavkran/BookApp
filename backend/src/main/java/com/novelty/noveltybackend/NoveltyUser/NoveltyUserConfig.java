@@ -1,4 +1,4 @@
-package com.novelty.noveltybackend.noveltyUser;
+package com.novelty.noveltybackend.NoveltyUser;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;

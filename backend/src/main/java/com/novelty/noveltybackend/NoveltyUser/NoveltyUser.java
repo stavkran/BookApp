@@ -1,4 +1,4 @@
-package com.novelty.noveltybackend.noveltyUser;
+package com.novelty.noveltybackend.NoveltyUser;
 
 import jakarta.persistence.*;
 
