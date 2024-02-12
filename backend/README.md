@@ -12,3 +12,8 @@
 
 ## POSTMAN Workspace
 [Join here](https://app.getpostman.com/join-team?invite_code=089ed7b6060fa53b05805c8879520973&target_code=8738a82dc9aef466de6b5aa80fd83178)
+
+## Shared Google Account
+Address: novelty478@gmail.com
+Password: fJr7ZFCxQtAXA1X
+API Key: AIzaSyDCz61FTB_AWUL70we0gSAs5eD9PvrwUtI
