@@ -10,6 +10,9 @@
 7. Remove locks preventing the user to access the DB [like this](https://stackoverflow.com/questions/19334041/the-select-permission-was-denied-on-the-object-users-database-xxx-schema)
 8. Run server
 
+## Other Dependencies
+1. VS Code Extension: Draw.io Integration
+
 ## POSTMAN Workspace
 [Join here](https://app.getpostman.com/join-team?invite_code=089ed7b6060fa53b05805c8879520973&target_code=8738a82dc9aef466de6b5aa80fd83178)
 
