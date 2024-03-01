@@ -10,7 +10,7 @@ import java.util.List;
 public class NoveltyUserConfig {
 
     @Bean
-    CommandLineRunner commandLineRunner(NoveltyUserRepository repository){
+    CommandLineRunner reportCommandLineRunner(NoveltyUserRepository repository){
         return args -> {
             new NoveltyUser("TestUser1");
             new NoveltyUser("TestUser2");
