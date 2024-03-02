@@ -34,13 +34,13 @@ public class Report {
     }
 
     public Report(NoveltyUser createdByUser, NoveltyUser refersToUser, String reason) {
-        this.createdByUser = refersToUser;
+        this.createdByUser = createdByUser;
         this.refersToUser = refersToUser;
         this.reason = reason;
     }
 
     public Report(NoveltyUser createdByUser, NoveltyUser refersToUser, String reason, String comment) {
-        this.createdByUser = refersToUser;
+        this.createdByUser = createdByUser;
         this.refersToUser = refersToUser;
         this.reason = reason;
         this.comment = comment;
@@ -48,14 +48,14 @@ public class Report {
 
     public Report(Long id, NoveltyUser createdByUser, NoveltyUser refersToUser, String reason) {
         this.id = id;
-        this.createdByUser = refersToUser;
+        this.createdByUser = createdByUser;
         this.refersToUser = refersToUser;
         this.reason = reason;
     }
 
     public Report(Long id, NoveltyUser createdByUser, NoveltyUser refersToUser, String reason, String comment) {
         this.id = id;
-        this.createdByUser = refersToUser;
+        this.createdByUser = createdByUser;
         this.refersToUser = refersToUser;
         this.reason = reason;
         this.comment = comment;
