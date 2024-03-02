@@ -1,6 +1,6 @@
 # Read Me First
 
-[Tutorial] (https://www.youtube.com/watch?v=9SGDpanrc8U&ab_channel=Amigoscode)
+[Tutorial](https://www.youtube.com/watch?v=9SGDpanrc8U&ab_channel=Amigoscode)
 
 ## Steps to connect to DB
 1. Install MS SQL Server from [here](https://go.microsoft.com/fwlink/p/?linkid=2215158&clcid=0x409&culture=en-us&country=us)
