@@ -3,6 +3,9 @@ package com.novelty.noveltybackend.Report;
 import com.novelty.noveltybackend.NoveltyUser.NoveltyUser;
 import jakarta.persistence.*;
 
+import java.util.Calendar;
+import java.util.Date;
+
 @Entity
 @Table
 public class Report {
@@ -21,6 +24,8 @@ public class Report {
 
     private String comment;
 
+    private Date createdTimestamp;
+
     @ManyToOne
     @JoinColumn(name = "created_by_user_id")
     private NoveltyUser createdByUser;
@@ -37,6 +42,7 @@ public class Report {
         this.createdByUser = createdByUser;
         this.refersToUser = refersToUser;
         this.reason = reason;
+        this.createdTimestamp = Calendar.getInstance().getTime();
     }
 
     public Report(NoveltyUser createdByUser, NoveltyUser refersToUser, String reason, String comment) {
@@ -44,6 +50,7 @@ public class Report {
         this.refersToUser = refersToUser;
         this.reason = reason;
         this.comment = comment;
+        this.createdTimestamp = Calendar.getInstance().getTime();
     }
 
     public Report(Long id, NoveltyUser createdByUser, NoveltyUser refersToUser, String reason) {
@@ -51,6 +58,7 @@ public class Report {
         this.createdByUser = createdByUser;
         this.refersToUser = refersToUser;
         this.reason = reason;
+        this.createdTimestamp = Calendar.getInstance().getTime();
     }
 
     public Report(Long id, NoveltyUser createdByUser, NoveltyUser refersToUser, String reason, String comment) {
@@ -59,6 +67,7 @@ public class Report {
         this.refersToUser = refersToUser;
         this.reason = reason;
         this.comment = comment;
+        this.createdTimestamp = Calendar.getInstance().getTime();
     }
     public Long getId() {
         return id;
@@ -96,12 +105,21 @@ public class Report {
         this.refersToUser = refersToUser;
     }
 
+    public Date getCreatedTimestamp() {
+        return createdTimestamp;
+    }
+
+    public void setCreatedTimestamp(Date createdTimestamp) {
+        this.createdTimestamp = createdTimestamp;
+    }
+
     @Override
     public String toString() {
         return "Report{" +
                 "id=" + id +
                 ", reason='" + reason + '\'' +
                 ", comment='" + comment + '\'' +
+                ", createdTimestamp=" + createdTimestamp +
                 ", createdByUser=" + createdByUser +
                 ", refersToUser=" + refersToUser +
                 '}';
