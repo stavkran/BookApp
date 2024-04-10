@@ -6,36 +6,36 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/user")
+@RequestMapping(path = "api/book")
 public class BookController {
-    private final NoveltyUserService noveltyUserService;
+    private final BookService bookService;
 
     @Autowired
-    public BookController(NoveltyUserService noveltyUserService){
-        this.noveltyUserService = noveltyUserService;
+    public BookController(BookService bookService){
+        this.bookService = bookService;
     }
     @GetMapping
-    public List<NoveltyUser> getAllUsers(){
-        return noveltyUserService.getUsers();
+    public List<Book> getAllBooks(){
+        return bookService.getAllBooks();
     }
 
-    @GetMapping(path = "{userId}")
-    public NoveltyUser getUser(@PathVariable("userId") Long id){
-        return noveltyUserService.getUser(id);
+    @GetMapping(path = "{bookId}")
+    public Book getBook(@PathVariable("bookId") Long id){
+        return bookService.getBook(id);
     }
 
     @PostMapping
-    public void registerNewUser(@RequestBody NoveltyUser user){
-        noveltyUserService.addNewUser(user);
+    public void addNewBook(@RequestBody Book book){
+        bookService.addNewBook(book);
     }
 
-    @DeleteMapping(path = "{userId}")
-    public void deleteUser(@PathVariable("userId") Long id ){
-        noveltyUserService.deleteUser(id);
+    @DeleteMapping(path = "{bookId}")
+    public void deleteBook(@PathVariable("bookId") Long id ){
+        bookService.deleteBook(id);
     }
 
-    @PutMapping(path = "{userId}")
-    public void updateUser(@PathVariable("userId") Long id, @RequestBody(required = false) NoveltyUser user){
-        noveltyUserService.updateUser(id, user.getName());
+    @PutMapping(path = "{bookId}")
+    public void updateBook(@PathVariable("bookId") Long id, @RequestBody(required = false) Book book){
+        bookService.updateBook(id, book.getTitle(), book.getDescription(), book.getPageCount(), book.getReleaseDate());
     }
 }

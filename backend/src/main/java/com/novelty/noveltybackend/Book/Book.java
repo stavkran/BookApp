@@ -2,55 +2,84 @@ package com.novelty.noveltybackend.Book;
 
 import jakarta.persistence.*;
 
+import java.util.Date;
+
 @Entity
 @Table
 public class Book {
     @Id
     @SequenceGenerator(
-            name = "user_sequence",
-            sequenceName = "user_sequence",
+            name = "book_sequence",
+            sequenceName = "book_sequence",
             allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "user_sequence"
+            generator = "book_sequence"
     )
     private Long id;
-    private String name;
+    private String title;
+
+    private String description;
+
+    private int pageCount;
+
+    private Date releaseDate;
 
     public Book() {
     }
 
-    public Book(String name) {
-        this.name = name;
-    }
-
-    public Book(Long id, String name) {
-        this.id = id;
-        this.name = name;
+    public Book(String title, String description, int pageCount, Date releaseDate) {
+        this.title = title;
+        this.description = description;
+        this.pageCount = pageCount;
+        this.releaseDate = releaseDate;
     }
 
     public Long getId() {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public String getDescription() {
+        return description;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public int getPageCount() {
+        return pageCount;
+    }
+
+    public Date getReleaseDate() {
+        return releaseDate;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setPageCount(int pageCount) {
+        this.pageCount = pageCount;
+    }
+
+    public void setReleaseDate(Date releaseDate) {
+        this.releaseDate = releaseDate;
     }
 
     @Override
     public String toString() {
-        return "User{" +
+        return "Book{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", pageCount=" + pageCount +
+                ", releaseDate=" + releaseDate +
                 '}';
     }
 }
