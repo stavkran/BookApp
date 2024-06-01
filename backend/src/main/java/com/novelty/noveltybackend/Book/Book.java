@@ -1,5 +1,7 @@
 package com.novelty.noveltybackend.Book;
 
+import com.novelty.noveltybackend.Author.Author;
+import com.novelty.noveltybackend.NoveltyUser.NoveltyUser;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -26,14 +28,19 @@ public class Book {
 
     private Date releaseDate;
 
+    @ManyToOne
+    @JoinColumn(name = "written_by")
+    private Author author;
+
     public Book() {
     }
 
-    public Book(String title, String description, int pageCount, Date releaseDate) {
+    public Book(String title, String description, int pageCount, Date releaseDate, Author author) {
         this.title = title;
         this.description = description;
         this.pageCount = pageCount;
         this.releaseDate = releaseDate;
+        this.author = author;
     }
 
     public Long getId() {
@@ -56,6 +63,10 @@ public class Book {
         return releaseDate;
     }
 
+    public Author getAuthor(){
+        return author;
+    }
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -72,6 +83,8 @@ public class Book {
         this.releaseDate = releaseDate;
     }
 
+    public void setAuthor(Author author){ this.author = author;}
+
     @Override
     public String toString() {
         return "Book{" +
@@ -80,6 +93,7 @@ public class Book {
                 ", description='" + description + '\'' +
                 ", pageCount=" + pageCount +
                 ", releaseDate=" + releaseDate +
+                ", author=" + author +
                 '}';
     }
 }
